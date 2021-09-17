@@ -1,4 +1,5 @@
 import { Router, request, response, Request, Response} from 'express'
+import { getCadastros, saveCadastro, getCadastro } from './controller/CadastroController'
  
 import { getTasks, saveTask, getTask, updateTask, deleteTask, finishedTask } from './controller/tasksController'
 
@@ -14,5 +15,11 @@ routes.get('/tasks/:id', getTask)
 routes.put('/tasks/:id', updateTask)
 routes.delete('/tasks/:id', deleteTask)
 routes.patch('/tasks/:id', finishedTask)
+
+
+routes.get('/cadastro', getCadastros)
+routes.post('/cadastro', saveCadastro)
+
+
  
 export default routes
